@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Calculate Age</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <form action="{% url 'calculate_age' %}" method="GET">
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if age is not None %}
+        <h1>Your Age: {{ age }}</h1>
+    {% endif %}
+</body>
+</html>

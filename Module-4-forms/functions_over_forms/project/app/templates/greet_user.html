@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Welcome User</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <form action="/" method="GET">
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if name %}
+        <h1>Hello, {{ name }}!</h1>
+    {% endif %}
+</body>
+</html>
