@@ -40,8 +40,9 @@ def xyz_there(request):
     form = XyzThere(request.GET)
     if form.is_valid():
         user_given = form.cleaned_data["given_string"]
-        user_given = 'xyz' not in user_given and '.xyz' not in user_given
-        return render(request, "xyz_there.html", {"form": form, "user_given": user_given})
+        # Check if 'xyz' is present not preceded by a dot
+        user_given_result = ('xyz' in user_given) and (user_given.find('.xyz') == -1)
+        return render(request, "xyz_there.html", {"form": form, "user_given": user_given_result})
     else:
         return render(request, "xyz_there.html", {"form": form})
 
